@@ -1,3 +1,5 @@
+import { Scooter } from "./scooter";
+
 export class User {
     email!: String;
     password!: String;
@@ -8,7 +10,9 @@ export class User {
     postalCode!: String;
     city!: String;
     admin!: boolean;
+    scooter!: Scooter;
   }
+  
 export class UserLogin {
   email!: String;
   password!: String;

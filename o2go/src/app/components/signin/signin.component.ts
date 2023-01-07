@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../../shared/auth.service';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarService } from 'src/app/shared/snackbar.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { SnackbarService } from 'src/app/shared/snackbar.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
   public signinForm: FormGroup;
   constructor(
     public fb: FormBuilder,
@@ -25,11 +24,6 @@ export class SigninComponent implements OnInit {
   }
   navigate(){
     this.router.navigate(['/sign-up'])
-  }
-  test(){
-    this.router.navigate(['/user-profile/0'])
-  }
-  ngOnInit() {
   }
   loginUser() {
     this.authService.signIn(this.signinForm.value);

@@ -1,36 +1,19 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators
-} from '@angular/forms';
-import {
-  Router
-} from '@angular/router';
-import {
-  ScooterServiceLocal
-} from 'src/app/shared/local/scooter.service';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ScooterServiceLocal } from 'src/app/shared/local/scooter.service';
 import { UserServiceLocal } from 'src/app/shared/local/user.service';
-import {
-  Scooter
-} from 'src/app/shared/models/scooter';
-
+import { Scooter } from 'src/app/shared/models/scooter';
 
 @Component({
-  selector: 'app-scooters',
-  templateUrl: './scooters.component.html',
-  styleUrls: ['./scooters.component.scss'],
+  selector: 'app-scooter-selection',
+  templateUrl: './scooter-selection.component.html',
+  styleUrls: ['./scooter-selection.component.scss'],
 })
-export class ScootersComponent {
+export class ScooterSelectionComponent implements OnInit {
   scooters: Scooter[]
   index = 0;
   scooterSelection: FormGroup;
-  contractSelection: FormGroup;
-
   constructor(
     public fb: FormBuilder,
     public db: ScooterServiceLocal,
@@ -40,10 +23,8 @@ export class ScootersComponent {
     this.scooterSelection = this.fb.group({
       scooter: ['', Validators.required],
     });
-    this.contractSelection = this.fb.group({
-      contract: ['', Validators.required],
-    });
   }
+
 
   ngOnInit(): void {
     this.scooters = this.db.get();

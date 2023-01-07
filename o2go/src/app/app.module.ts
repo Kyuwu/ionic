@@ -21,10 +21,18 @@ import { ScooterServiceLocal } from './shared/local/scooter.service';
 import { CommonModule } from '@angular/common';
 import { ScootersComponent } from './components/user-profile/scooters/scooters.component';
 import { MenuComponent } from "./menu/menu.component";
+import { UserServiceLocal } from './shared/local/user.service';
+import { MenuHeaderComponent } from './menu-header/menu-header.component';
+import { SettingsComponent } from './components/user-profile/settings/settings.component';
+import { ServicesComponent } from './components/user-profile/services/services.component';
+import { ContractsComponent } from './components/user-profile/contracts/contracts.component';
+import { ScooterSelectionComponent } from './components/user-profile/scooters/scooter-selection/scooter-selection.component';
+import { ContractSelectionComponent } from './components/user-profile/scooters/contract-selection/contract-selection.component';
+import { PaymentSelectionComponent } from './components/user-profile/scooters/payment-selection/payment-selection.component';
 
 @NgModule({
-    declarations: [AppComponent, SigninComponent, SignupComponent, Signup2Component, UserProfileComponent, ScootersComponent, MenuComponent],
-    providers: [ScooterService, ScooterServiceLocal,
+    declarations: [AppComponent, SigninComponent, SignupComponent, Signup2Component, UserProfileComponent, ScootersComponent, MenuComponent, MenuHeaderComponent, SettingsComponent, ServicesComponent, ContractsComponent, ScooterSelectionComponent, ContractSelectionComponent, PaymentSelectionComponent],
+    providers: [ScooterService, ScooterServiceLocal, UserServiceLocal,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,

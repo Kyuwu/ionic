@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Brand: {{scooters[index].brand}}</ion-card-title>
+    <ion-card-subtitle>Description: {{scooters[index].description}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    Licenseplate: {{scooters[index].licensePlate}}
+    Price: {{scooters[index].price}}
+    Build year: {{scooters[index].year}}
+  </ion-card-content>
+</ion-card>
+<ion-list>
+  <form id="container" class="form-signin" [formGroup]="scooterSelection" (ngSubmit)="submit()">
+    <ion-radio-group formControlName="scooter" [allowEmptySelection]="true" value="scooterSelection">
+      <ion-item *ngFor="let scooter of scooters; index as i">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>{{scooter.brand}}</ion-label>
+        <ion-radio (click)="index = i" slot="end" value="{{scooter.licensePlate}}"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </form>
+</ion-list>
+<ion-button color="light" [disabled]="!scooterSelection.valid" (click)="submit()">CONTINUE</ion-button>

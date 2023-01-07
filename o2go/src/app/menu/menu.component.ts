@@ -1,4 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { UserServiceLocal } from "../shared/local/user.service";
+import { User } from "../shared/models/user";
 
 
 @Component({
@@ -8,8 +11,35 @@ import { Component, OnInit } from "@angular/core";
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  @Input() menu = false;
+  @Input() state = "";
+
+  _user: User
+  constructor(private router: Router, private user: UserServiceLocal) {
+    console.log(this.user.get())
+    this._user = this.user.get();
+   }
 
   ngOnInit() {}
 
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['log-in']);
+  }
+
+  contracts() {
+    this.router.navigate(['/user-profile/contracts'])  
+  }
+  home() {
+    this.router.navigate(['/user-profile'])  
+  }
+  scooters() {
+    this.router.navigate(['/user-profile/scooters'])
+  }
+  services() {
+    this.router.navigate(['/user-profile/services'])    
+  }
+  settings() {
+    this.router.navigate(['/user-profile/settings'])   
+  }
 }

@@ -1,37 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from './../../shared/auth.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Router
+} from '@angular/router';
+import {
+  UserServiceLocal
+} from 'src/app/shared/local/user.service';
+import {
+  User
+} from 'src/app/shared/models/user';
+import {
+  AuthService
+} from './../../shared/auth.service';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  currentUser: Object = {};
-  id;
+  currentUser: User;
   constructor(
     public authService: AuthService,
-    private actRoute: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    public user: UserServiceLocal
   ) {
-    this.id = this.actRoute.snapshot.paramMap.get('id');
-    // this.authService.getUserProfile(this.id).subscribe((res) => {
-    //   this.currentUser = res.msg;
-    // });
-    // this.currentUser = this.authService.getUserProfileDummy(id);
+    this.currentUser = user.get();
   }
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   contracts() {
-    this.router.navigate(['/user-profile/'+this.id+'/contracts'])  
+    this.router.navigate(['/user-profile/contracts'])
   }
   scooters() {
-    this.router.navigate(['/user-profile/'+this.id+'/scooters'])
+    this.router.navigate(['/user-profile/scooters'])
   }
   services() {
-    this.router.navigate(['/user-profile/'+this.id+'/services'])    
+    this.router.navigate(['/user-profile/services'])
   }
   settings() {
-    this.router.navigate(['/user-profile/'+this.id+'/settings'])   
+    this.router.navigate(['/user-profile/settings'])
   }
 }

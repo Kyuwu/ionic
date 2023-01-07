@@ -33,14 +33,14 @@ import { AuthGuard } from "./shared/auth.guard";
 // ];
 const routes: Routes = [
   { path: '', redirectTo: '/log-in', pathMatch: 'full' },
-  { path: 'log-in', component: SigninComponent },
+  { path: 'log-in', component: SigninComponent, },
   { path: 'sign-up', component: SignupComponent },
   { path: 'sign-up2', component: Signup2Component },
-  { path: 'user-profile/:id', component: UserProfileComponent },
-  { path: 'user-profile/:id/scooters', component: ScootersComponent },
-  { path: 'user-profile/:id/contracts', component: ContractsComponent },
-  { path: 'user-profile/:id/services', component: ServicesComponent },
-  { path: 'user-profile/:id/settings', component: SettingsComponent }
+  { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuard] },
+  { path: 'user-profile/scooters', component: ScootersComponent, canActivate:[AuthGuard]  },
+  { path: 'user-profile/contracts', component: ContractsComponent, canActivate:[AuthGuard]  },
+  { path: 'user-profile/services', component: ServicesComponent, canActivate:[AuthGuard]  },
+  { path: 'user-profile/settings', component: SettingsComponent, canActivate:[AuthGuard]  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
