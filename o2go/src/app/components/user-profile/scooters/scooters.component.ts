@@ -1,9 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/internal/operators/map';
-import { AuthService } from 'src/app/shared/auth.service';
+import { ScooterServiceLocal } from 'src/app/shared/local/scooter.service';
 import { Scooter } from 'src/app/shared/models/scooter';
-import { ScooterService } from 'src/app/shared/scooters.service';
 
 
 @Component({
@@ -13,12 +10,10 @@ import { ScooterService } from 'src/app/shared/scooters.service';
 })
 export class ScootersComponent implements OnInit {
   scooters: Scooter[]
-  constructor(private db: ScooterService) { }
-  ngOnInit(): void {
-    this.getScooters();
+  constructor(private db: ScooterServiceLocal) { 
+    
   }
-  getScooters() {
-    this.db.getScooters().subscribe(
-      i => this.scooters = i);
+  ngOnInit(): void {
+    this.scooters = this.db.get();
   }
 }

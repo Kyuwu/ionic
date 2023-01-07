@@ -14,7 +14,7 @@ import { Scooter } from './models/scooter';
   providedIn: 'root',
 })
 export class AuthService {
-  endpoint: string = 'https://localhost:7283/api';
+  endpoint: string = 'http://localhost:8080/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
   constructor(private http: HttpClient, public router: Router, public snack: SnackbarService) {}

@@ -16,7 +16,7 @@ import { Scooter } from './models/scooter';
 })
 export class ScooterService {
     
-  endpoint: string = 'https://localhost:7283/api';
+  endpoint: string = 'http://localhost:8080/api';
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`});

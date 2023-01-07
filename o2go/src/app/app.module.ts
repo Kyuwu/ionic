@@ -16,29 +16,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './shared/angular-mat.module';
 import { HttpRequestInterceptor } from './shared/http-request.interceptor';
 import { Signup2Component } from './components/signup/signup2/signup2.component';
+import { ScooterService } from './shared/scooters.service';
+import { ScooterServiceLocal } from './shared/local/scooter.service';
+import { CommonModule } from '@angular/common';
+import { ScootersComponent } from './components/user-profile/scooters/scooters.component';
+import { MenuComponent } from "./menu/menu.component";
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, Signup2Component, UserProfileComponent],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule, AngularMaterialModule],
-  providers: [
-    { 
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: HttpRequestInterceptor, 
-      multi: true 
-    }
-  ],
-  // providers: [
-  //   { 
-  //     provide: RouteReuseStrategy, HTTP_INTERCEPTORS,
-  //     useClass: IonicRouteStrategy, AuthInterceptor,
-  //     multi: true
-  //   }
-  // ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, SigninComponent, SignupComponent, Signup2Component, UserProfileComponent, ScootersComponent, MenuComponent],
+    providers: [ScooterService, ScooterServiceLocal,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpRequestInterceptor,
+            multi: true
+        }
+    ],
+    // providers: [
+    //   { 
+    //     provide: RouteReuseStrategy, HTTP_INTERCEPTORS,
+    //     useClass: IonicRouteStrategy, AuthInterceptor,
+    //     multi: true
+    //   }
+    // ],
+    bootstrap: [AppComponent],
+    imports: [BrowserModule, CommonModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule, AngularMaterialModule]
 })
 export class AppModule {}
