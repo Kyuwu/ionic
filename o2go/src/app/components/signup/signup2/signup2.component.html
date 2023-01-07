@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true" class="vertical-center">
+  <form id="container"     
+  class="form-signin"
+  [formGroup]="signupForm"
+  (ngSubmit)="registerUser()">
+    <h1 class="text-center register-header">REGISTER</h1>
+    <h2 class="text-center register-subheader">ACCOUNT DETAILS</h2>
+    <ion-item color="dark">
+      <ion-input
+        type="text"
+        class="form-control"
+        formControlName="city"
+        placeholder="City..."
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-input
+        type="text"
+        class="form-control"
+        formControlName="street"
+        placeholder="Street..."
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-input
+        type="text"
+        class="form-control"
+        formControlName="housenumber"
+        placeholder="Housenumber..."
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-input
+        type="text"
+        class="form-control"
+        formControlName="postalCode"
+        placeholder="Postal code..."
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-button color="light" [disabled]="!signupForm.valid" type="submit">SIGN UP</ion-button>
+    <!-- <ion-button color="light" (click)="navigate()">GO BACK</ion-button> -->
+  </form>
+</ion-content>
