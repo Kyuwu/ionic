@@ -29,11 +29,20 @@
             </ion-radio-group>
           </form>
         </ion-list>
-        <button mat-button matStepperNext (click)="submit()">Next</button>
+        <button mat-button [disabled]="!scooterSelection.valid" matStepperNext (click)="submit()">Next</button>
       </mat-step>
       <mat-step [stepControl]="contractSelection">
-        <ng-template matStepLabel>2. Choose your contract for your scooter</ng-template>
-
+        <ng-template matStepLabel>2. Choose your contract</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Contract start</mat-label>
+          <mat-date-range-input [formGroup]="contractSelection" [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start date">
+            <input matEndDate formControlName="end" placeholder="End date">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <button mat-button [disabled]="!contractSelection.valid" matStepperNext (click)="submit()">Next</button>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>3. Payment selection</ng-template>

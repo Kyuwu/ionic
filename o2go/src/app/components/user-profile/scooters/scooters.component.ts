@@ -41,14 +41,20 @@ export class ScootersComponent {
       scooter: ['', Validators.required],
     });
     this.contractSelection = this.fb.group({
-      contract: ['', Validators.required],
+      price: ['', Validators.required],
+      start: ['', Validators.required],
+      end: ['', Validators.required],
     });
   }
 
   ngOnInit(): void {
     this.scooters = this.db.get();
   }
-
+  // myFilter = (d: Date | null): boolean => {
+  //   const day = (d || new Date()).getDay();
+  //   // Prevent Saturday and Sunday from being selected.
+  //   return day =< d;
+  // };
   submit() {
     //update to backend with current user
     let scooter = this.scooters.filter(item => item.licensePlate === this.scooterSelection.controls['scooter'].value)[0];
