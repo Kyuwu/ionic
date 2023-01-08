@@ -18,6 +18,7 @@ import { UserServiceLocal } from 'src/app/shared/local/user.service';
 import {
   Scooter
 } from 'src/app/shared/models/scooter';
+import { UserService } from 'src/app/shared/user.service';
 
 
 @Component({
@@ -36,7 +37,8 @@ export class ScootersComponent {
     public fb: FormBuilder,
     public db: ScooterServiceLocal,
     public router: Router,
-    public user: UserServiceLocal
+    public user: UserServiceLocal,
+    public userUpdate: UserService
   ) {
     this.scooterSelection = this.fb.group({
       scooter: ['', Validators.required],
@@ -51,16 +53,18 @@ export class ScootersComponent {
   ngOnInit(): void {
     this.scooters = this.db.get();
   }
-  // myFilter = (d: Date | null): boolean => {
-  //   const day = (d || new Date()).getDay();
-  //   // Prevent Saturday and Sunday from being selected.
-  //   return day =< d;
-  // };
-  submit() {
-    //update to backend with current user
+  submitScooter() {
+
     let scooter = this.scooters.filter(item => item.licensePlate === this.scooterSelection.controls['scooter'].value)[0];
     this.contractSelection.setControl('price', new FormControl(scooter.price, Validators.required));
-    console.log(scooter)
-    // this.user.setScooter()
+    this.user.setScooter(scooter)
+  }
+  submitContract() {
+    this.user.setContract(this.contractSelection.value)
+  }
+
+  finish() {
+    //update to backend with current user
+    this.userUpdate.update(this.user.get());
   }
 }

@@ -1,11 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Component } from "@angular/core";
+import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthService } from "../shared/auth.service";
 import { UserServiceLocal } from "../shared/local/user.service";
 import { UserGet } from "../shared/models/user";
 import { UserService } from "../shared/user.service";
-import { ConfirmedValidator } from "../shared/validators/confirmed.validator";
 
 
 @Component({
@@ -16,6 +15,7 @@ import { ConfirmedValidator } from "../shared/validators/confirmed.validator";
 export class EditUserComponent{
   editUserForm: FormGroup;
   user: UserGet;
+  postUser: UserGet;
   constructor(
     public fb: FormBuilder,
     public authService: AuthService,
@@ -27,10 +27,15 @@ export class EditUserComponent{
     this.editUserForm = this.fb.group({
       firstName: [this.user.firstName, Validators.required],
       lastName: [this.user.lastName, Validators.required],
-      street: [this.user.address.street, Validators.required],
-      housenumber: [this.user.address.housenumber, Validators.required],
-      postalCode: [this.user.address.postalCode, Validators.required],
-      city: [this.user.address.city, Validators.required],
+      address: new FormGroup({
+        street: new FormControl(this.user.address.street, Validators.required),
+        housenumber: new FormControl(this.user.address.housenumber, Validators.required),
+        postalCode: new FormControl(this.user.address.postalCode, Validators.required),
+        city: new FormControl(this.user.address.city, Validators.required),
+      }),
+      user: new FormGroup({
+        id: new FormControl(''),
+      }),
     });
   }
 
@@ -39,6 +44,11 @@ export class EditUserComponent{
   }
 
   submit() {
-    this._userUpdate.update(this.editUserForm.value, this.user.id);
+
+    this.editUserForm.addControl('id', new FormControl(this.user.id, Validators.required));
+    this.editUserForm.addControl('userId', new FormControl(this.user.userId));
+    this._user.set(this.editUserForm.value)
+    this.postUser = this.editUserForm.value;
+    this._userUpdate.update(this.postUser);
   }
 }

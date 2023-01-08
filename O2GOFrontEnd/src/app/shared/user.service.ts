@@ -49,12 +49,16 @@ export class UserService {
   getAdress(id: number) {
     return this.http.get(`${this.endpoint}/users/address/${id}`);
   }
-  update(user: FormData, id: number) {
+  update(user: UserGet) {
     try {
+      this.snack.update("Updated", "")
       console.log(user)
-      return this.http.post(`${this.endpoint}/users/update/${id}`, user).subscribe;
+      return this.http.post(`${this.endpoint}/users/update`, user, {
+        headers: this.headers
+      }).subscribe(response => {
+        console.log(response)
+      });
     } catch (error) {
-      console.log("xddd")
       return this.handleError(error);
     }
     

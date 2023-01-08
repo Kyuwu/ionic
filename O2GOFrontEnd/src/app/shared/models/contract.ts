@@ -1,4 +1,5 @@
 export class Contract {
-  startDate!: Date;
-  endDate!: Date;
+  start!: Date;
+  end!: Date;
+  price!: number;
 }

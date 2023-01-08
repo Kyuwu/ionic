@@ -10,12 +10,12 @@
             Brand: {{scooters[index].brand}}<br>
             Description: {{scooters[index].description}}<br>
             Licenseplate: {{scooters[index].licensePlate}}<br>
-            Price: {{scooters[index].price}}<br>
+            Price per month: {{scooters[index].price}}<br>
             Build year: {{scooters[index].year}}
           </ion-card-content>
         </ion-card>
         <ion-list>
-          <form id="container" class="form-signin" [formGroup]="scooterSelection" (ngSubmit)="submit()">
+          <form id="container" class="form-signin" [formGroup]="scooterSelection">
             <ion-radio-group formControlName="scooter" [allowEmptySelection]="true" value="scooterSelection">
               <ion-item *ngFor="let scooter of scooters; index as i" id="scooter-details">
                 <ion-thumbnail slot="start">
@@ -27,7 +27,7 @@
             </ion-radio-group>
           </form>
         </ion-list>
-        <button mat-button [disabled]="!scooterSelection.valid" matStepperNext (click)="submit()" class="button-next">Next</button>
+        <button mat-button [disabled]="!scooterSelection.valid" matStepperNext (click)="submitScooter()" class="button-next">Next</button>
       </mat-step>
       <mat-step [stepControl]="contractSelection">
         <form [formGroup]="contractSelection">
@@ -42,19 +42,18 @@
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>
           <mat-form-field>
-            <mat-label>Price</mat-label>
+            <mat-label>Price per month</mat-label>
             <input matInput formControlName="price" id="price-input" readonly>
           </mat-form-field>
         </form>
-        <button mat-button [disabled]="!contractSelection.valid" matStepperNext (click)="submit()">Next</button>
+        <button mat-button [disabled]="!contractSelection.valid" matStepperNext (click)="submitContract()">Next</button>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>3. Payment selection</ng-template>
         You are now done.
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-          <button mat-button>Finish</button>
+          <button mat-button (click)="finish()">Finish</button>
         </div>
       </mat-step>
     </mat-vertical-stepper>

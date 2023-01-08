@@ -76,15 +76,6 @@ import {
   ContractsComponent
 } from './components/user-profile/contracts/contracts.component';
 import {
-  ScooterSelectionComponent
-} from './components/user-profile/scooters/scooter-selection/scooter-selection.component';
-import {
-  ContractSelectionComponent
-} from './components/user-profile/scooters/contract-selection/contract-selection.component';
-import {
-  PaymentSelectionComponent
-} from './components/user-profile/scooters/payment-selection/payment-selection.component';
-import {
   MenuHeaderComponent
 } from './menu-header/menu-header.component';
 import {
@@ -107,9 +98,6 @@ import { UserService } from './shared/user.service';
     SettingsComponent,
     ServicesComponent,
     ContractsComponent,
-    ScooterSelectionComponent,
-    ContractSelectionComponent,
-    PaymentSelectionComponent,
     EditUserComponent
   ],
   providers: [ScooterService, UserService, ScooterServiceLocal, UserServiceLocal,

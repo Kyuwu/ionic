@@ -17,7 +17,7 @@ export class UserServiceLocal {
 
   public setScooter(scooter: Scooter) {
     this.user.scooter = scooter;
-    console.log(this.user.scooter.brand)
+    console.log(this.user.scooter)
   }
 
   public setContract(contract: Contract) {
