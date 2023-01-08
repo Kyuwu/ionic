@@ -4,6 +4,7 @@ import {
 import {
   Adress,
   User,
+  UserGet,
   UserLogin
 } from './models/user';
 import {
@@ -47,6 +48,16 @@ export class UserService {
   // getter
   getAdress(id: number) {
     return this.http.get(`${this.endpoint}/users/address/${id}`);
+  }
+  update(user: FormData, id: number) {
+    try {
+      console.log(user)
+      return this.http.post(`${this.endpoint}/users/update/${id}`, user).subscribe;
+    } catch (error) {
+      console.log("xddd")
+      return this.handleError(error);
+    }
+    
   }
   handleError(error: HttpErrorResponse) {
     let msg = '';

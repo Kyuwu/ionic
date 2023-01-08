@@ -1,3 +1,5 @@
+import { Contract } from "./contract";
+
 export class Scooter {
     licensePlate!: string;
     maxKmh!: number;
@@ -5,4 +7,5 @@ export class Scooter {
     year!: number;
     description!: string;
     price!: number;
+    contract!: Contract;
   }

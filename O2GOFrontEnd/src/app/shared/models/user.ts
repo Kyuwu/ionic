@@ -24,7 +24,6 @@ export class UserGet {
   password!: String;
   firstName!: String;
   lastName!: String;
-  contracts!: Contract[]
   scooter!: Scooter;
 }
 export class Adress {

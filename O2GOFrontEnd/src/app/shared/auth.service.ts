@@ -82,8 +82,8 @@ export class AuthService {
       this.snack.delete(msg,'Ok');
     } else {
       // server-side error
-      this.snack.delete(`${error.message}`, '');
-      msg = `Error Code from server: ${error.status}\nMessage: ${error.message}`;
+      msg = `Wrong credentials`;
+      this.snack.delete(`${msg}`, '');
     }
     return throwError(msg);
   }

@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/user-profile/services'])    
   }
   settings() {
-    this.router.navigate(['/user-profile/settings'])   
+    this.router.navigate(['/user-profile/edit'])   
   }
   editUser() {
     this.router.navigate(['/user-profile/edit'])   
