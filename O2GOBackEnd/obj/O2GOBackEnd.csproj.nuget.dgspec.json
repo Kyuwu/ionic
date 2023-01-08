@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Drive\\hbo\\HBO\\k4.1\\APP\\o2goapp2.0\\o2goapp\\O2GOBackEnd\\O2GOBackEnd.csproj": {}
+    "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj": {}
   },
   "projects": {
-    "E:\\Drive\\hbo\\HBO\\k4.1\\APP\\o2goapp2.0\\o2goapp\\O2GOBackEnd\\O2GOBackEnd.csproj": {
+    "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Drive\\hbo\\HBO\\k4.1\\APP\\o2goapp2.0\\o2goapp\\O2GOBackEnd\\O2GOBackEnd.csproj",
+        "projectUniqueName": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj",
         "projectName": "O2GOBackEnd",
-        "projectPath": "E:\\Drive\\hbo\\HBO\\k4.1\\APP\\o2goapp2.0\\o2goapp\\O2GOBackEnd\\O2GOBackEnd.csproj",
-        "packagesPath": "C:\\Users\\thijm\\.nuget\\packages\\",
-        "outputPath": "E:\\Drive\\hbo\\HBO\\k4.1\\APP\\o2goapp2.0\\o2goapp\\O2GOBackEnd\\obj\\",
+        "projectPath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj",
+        "packagesPath": "C:\\Users\\Verkuijlen\\.nuget\\packages\\",
+        "outputPath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\thijm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Verkuijlen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -106,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
