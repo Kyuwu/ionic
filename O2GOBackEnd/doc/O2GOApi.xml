@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>O2GOBackEnd</name>
+    </assembly>
+    <members>
+        <member name="M:O2GOBackEnd.Controllers.ContractController.GetContracts">
+            <summary>
+            GET api/contracts
+            </summary>
+            <returns>contracts</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ContractController.CreateContract(O2GOBackEnd.Models.Contract)">
+            <summary>
+            POST api/contracts/create
+            </summary>
+            <param name="contract"></param>
+            <returns>contract</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ContractController.UpdateContract(O2GOBackEnd.Models.Contract)">
+            <summary>
+            POST api/contracts/update
+            </summary>
+            <param name="contract"></param>
+            <returns>contract</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ContractController.RemoveContract(O2GOBackEnd.Models.Contract)">
+            <summary>
+            POST api/contracts/remove
+            </summary>
+            <param name="contract"></param>
+            <returns>contract</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.InsuranceController.GetInsurances">
+            <summary>
+            GET api/insurances
+            </summary>
+            <returns>insurances</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.InsuranceController.CreateInsurance(O2GOBackEnd.Models.Insurance)">
+            <summary>
+            POST api/insurances/create
+            </summary>
+            <param name="insurance"></param>
+            <returns>insurance</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.InsuranceController.UpdateInsurance(O2GOBackEnd.Models.Insurance)">
+            <summary>
+            POST api/insurances/update
+            </summary>
+            <param name="insurance"></param>
+            <returns>insurance</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.InsuranceController.RemoveInsurance(O2GOBackEnd.Models.Insurance)">
+            <summary>
+            POST api/insurances/update
+            </summary>
+            <param name="insurance"></param>
+            <returns>insurance</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.PackageController.GetPackages">
+            <summary>
+            GET api/packages
+            </summary>
+            <returns>packages</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.PackageController.CreatePackage(O2GOBackEnd.Models.Package)">
+            <summary>
+            POST api/packages/create
+            </summary>
+            <param name="package"></param>
+            <returns>package</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.PackageController.UpdatePackage(O2GOBackEnd.Models.Package)">
+            <summary>
+            POST api/packages/update
+            </summary>
+            <param name="package"></param>
+            <returns>package</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.PackageController.RemovePackage(O2GOBackEnd.Models.Package)">
+            <summary>
+            POST api/packages/delete
+            </summary>
+            <param name="package"></param>
+            <returns>package</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.GetScooters">
+            <summary>
+            GET api/scooters
+            </summary>
+            <returns>scooters</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.CreateScooter(O2GOBackEnd.Models.Scooter)">
+            <summary>
+            POST api/scooters/create
+            </summary>
+            <param name="scooter"></param>
+            <returns>scooter</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.UpdateScooter(O2GOBackEnd.Models.Scooter)">
+            <summary>
+            POST api/scooters/update
+            </summary>
+            <param name="scooter"></param>
+            <returns>scooter</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.RemoveScooter(O2GOBackEnd.Models.Scooter)">
+            <summary>
+            POST api/scooters/update
+            </summary>
+            <param name="scooter"></param>
+            <returns>scooter</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.GetAvailableScootersByDates(O2GOBackEnd.Models.Resources.FromToInputModel)">
+            <summary>
+            GET api/scooters/get-by-availability
+            </summary>
+            <param name="inputModel"></param>
+            <returns>scooters</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ScooterController.CheckAvailability(O2GOBackEnd.Models.Resources.ScooterFromToInputModel)">
+            <summary>
+            GET api/scooters/check-scooter-availability
+            </summary>
+            <param name="inputModel"></param>
+            <returns>scooter</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServiceController.GetServices">
+            <summary>
+            GET api/services
+            </summary>
+            <returns>services</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServiceController.CreateService(O2GOBackEnd.Models.Service)">
+            <summary>
+            POST api/services/create
+            </summary>
+            <param name="service"></param>
+            <returns>service</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServiceController.UpdateService(O2GOBackEnd.Models.Service)">
+            <summary>
+            POST api/services/update
+            </summary>
+            <param name="service"></param>
+            <returns>service</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServiceController.RemoveService(O2GOBackEnd.Models.Service)">
+            <summary>
+            POST api/services/remove
+            </summary>
+            <param name="service"></param>
+            <returns>service</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServicepointController.GetServices">
+            <summary>
+            GET api/servicepoints
+            </summary>
+            <returns>servicepoints</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServicepointController.CreateServicepoint(O2GOBackEnd.Models.Servicepoint)">
+            <summary>
+            POST api/servicepoints/create
+            </summary>
+            <param name="servicepoint"></param>
+            <returns>servicepoint</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServicepointController.UpdateServicepoint(O2GOBackEnd.Models.Servicepoint)">
+            <summary>
+            POST api/servicepoints/update
+            </summary>
+            <param name="servicepoint"></param>
+            <returns>servicepoint</returns>
+        </member>
+        <member name="M:O2GOBackEnd.Controllers.ServicepointController.RemoveServicepoint(O2GOBackEnd.Models.Servicepoint)">
+            <summary>
+            POST api/servicepoints/remove
+            </summary>
+            <param name="servicepoint"></param>
+            <returns>servicepoint</returns>
+        </member>
+    </members>
+</doc>
