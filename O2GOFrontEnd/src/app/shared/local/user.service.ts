@@ -1,18 +1,14 @@
 import {
   Scooter
 } from "../models/scooter";
-import { User } from "../models/user";
+import { User, UserGet } from "../models/user";
 
 export class UserServiceLocal {
 
-  private user = new User();
+  private user = new UserGet();
 
-  public set(userset: User) {
+  public set(userset: UserGet) {
     this.user = userset;
-  }
-
-  public setEmail(email: string) {
-    this.user.email = email;
   }
 
   public setScooter(scooter: Scooter) {

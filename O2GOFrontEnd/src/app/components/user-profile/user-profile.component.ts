@@ -9,7 +9,7 @@ import {
   UserServiceLocal
 } from 'src/app/shared/local/user.service';
 import {
-  User
+  User, UserGet
 } from 'src/app/shared/models/user';
 import {
   AuthService
@@ -20,7 +20,7 @@ import {
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  currentUser: User;
+  currentUser: UserGet;
   constructor(
     public authService: AuthService,
     public router: Router,

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserServiceLocal } from "../shared/local/user.service";
-import { User } from "../shared/models/user";
+import { User, UserGet } from "../shared/models/user";
 
 
 @Component({
@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   @Input() menu = false;
   @Input() state = "";
 
-  _user: User
+  _user: UserGet
   constructor(private router: Router, private user: UserServiceLocal) {
     console.log(this.user.get())
     this._user = this.user.get();
