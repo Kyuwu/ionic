@@ -35,7 +35,7 @@ export class EditUserComponent{
   }
 
   home() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/user-profile']);
   }
 
   submit() {
