@@ -111,11 +111,12 @@ namespace O2GOBackEnd
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-
             }
-                            app.UseSwagger();
-                app.UseSwaggerUI();
+
+            // Normally the swagger rules would be in the if statement above, because it is development only, but Docker does not allow you to see swagger, because it is not in development.
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
             app.UseCors(builder =>
             {
                 builder.AllowAnyOrigin()

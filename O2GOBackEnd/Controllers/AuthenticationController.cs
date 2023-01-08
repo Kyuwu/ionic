@@ -112,7 +112,8 @@ namespace O2GOBackEnd.Controllers
 
                 return Ok(new
                 {
-                    appUser,
+                    applicationUser = appUser,
+                    aspNetUser = user,
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo
                 });
