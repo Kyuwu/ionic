@@ -44,7 +44,8 @@ export class AuthService {
       .subscribe((res: any,) => {
       localStorage.setItem('token', res.token);
       this.user.set(res.user);
-      this.user.setEmail(res.user.email);
+      console.log(res)
+      this.user.set(res.appUser);
       this.router.navigate(['user-profile/']);
       },
       (error) => {                              
