@@ -93,6 +93,7 @@ import {
 import {
   EditUserComponent
 } from './edit-user/edit-user.component';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,7 @@ import {
     PaymentSelectionComponent,
     EditUserComponent
   ],
-  providers: [ScooterService, ScooterServiceLocal, UserServiceLocal,
+  providers: [ScooterService, UserService, ScooterServiceLocal, UserServiceLocal,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

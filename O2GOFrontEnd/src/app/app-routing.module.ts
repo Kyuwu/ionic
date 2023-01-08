@@ -8,6 +8,7 @@ import { ScootersComponent } from './components/user-profile/scooters/scooters.c
 import { ServicesComponent } from './components/user-profile/services/services.component';
 import { SettingsComponent } from './components/user-profile/settings/settings.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 import { AuthGuard } from "./shared/auth.guard";
 // const routes: Routes = [
 //   {
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'user-profile/scooters', component: ScootersComponent, canActivate:[AuthGuard]  },
   { path: 'user-profile/contracts', component: ContractsComponent, canActivate:[AuthGuard]  },
   { path: 'user-profile/services', component: ServicesComponent, canActivate:[AuthGuard]  },
-  { path: 'user-profile/settings', component: SettingsComponent, canActivate:[AuthGuard]  }
+  { path: 'user-profile/settings', component: SettingsComponent, canActivate:[AuthGuard]  },
+  { path: 'user-profile/edit', component: EditUserComponent, canActivate:[AuthGuard]  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

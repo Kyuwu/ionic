@@ -45,7 +45,7 @@ export class AuthService {
       localStorage.setItem('token', res.token);
       this.user.set(res.user);
       console.log(res)
-      this.user.set(res.appUser);
+      this.user.set(res.applicationUser);
       this.router.navigate(['user-profile/']);
       },
       (error) => {                              
