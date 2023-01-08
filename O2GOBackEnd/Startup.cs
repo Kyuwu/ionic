@@ -36,6 +36,7 @@ namespace O2GOBackEnd
             services.AddScoped<IServicepointService, ServicepointService>();
             services.AddScoped<IServiceService, ServiceService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAddressService, AddressService>();
 
             services.AddDbContext<O2GOContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ConnectionString"))

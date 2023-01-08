@@ -15,10 +15,12 @@ namespace O2GOBackEnd.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IAddressService _addressService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IAddressService addressService)
         {
             _userService = userService;
+            _addressService = addressService;
         }
 
         /// <summary>
@@ -49,6 +51,28 @@ namespace O2GOBackEnd.Controllers
             }
 
             return BadRequest("User couldn't be updated.");
+        }
+
+        /// <summary>
+        /// GET api/users/address
+        /// </summary>
+        /// <returns>address</returns>
+        [HttpGet("address/{id}")]
+        [Authorize]
+        public IActionResult GetAddress(int id)
+        {
+            return Ok(_addressService.GetAddress(id));
+        }
+
+        /// <summary>
+        /// POST api/users/address/update
+        /// </summary>
+        /// <returns>address</returns>
+        [HttpPost("address/update")]
+        [Authorize]
+        public IActionResult UpdateAddress([FromBody] Address address)
+        {
+            return Ok(_addressService.UpdateAddress(address));
         }
     }
 }
