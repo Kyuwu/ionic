@@ -23,8 +23,7 @@ export class SignupComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      confirm_password: ['', Validators.required],
-
+      confirm_password: ['', Validators.required]
     }, { 
       validator: ConfirmedValidator('password', 'confirm_password')
     });
