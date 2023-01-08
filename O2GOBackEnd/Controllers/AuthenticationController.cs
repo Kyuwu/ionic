@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using O2GOBackEnd.Models;
 using O2GOBackEnd.Models.Resources;
 using O2GOBackEnd.Models.User;
+using O2GOBackEnd.Services;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -20,12 +21,14 @@ namespace O2GOBackEnd.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly O2GOContext _context;
         private readonly IConfiguration _configuration;
+        private IUserService _userService;
 
-        public AuthenticationController(UserManager<IdentityUser> userManager, O2GOContext context, IConfiguration configuration)
+        public AuthenticationController(UserManager<IdentityUser> userManager, O2GOContext context, IConfiguration configuration, IUserService userService)
         {
             _userManager = userManager;
             _context = context;
             _configuration = configuration;
+            _userService = userService;
         }
 
         [HttpPost("register")]
@@ -105,9 +108,11 @@ namespace O2GOBackEnd.Controllers
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                     );
 
+                var appUser = _userService.GetUser(user.Id);
+
                 return Ok(new
                 {
-                    user,
+                    appUser,
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo
                 });
