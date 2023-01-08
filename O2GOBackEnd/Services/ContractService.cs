@@ -45,11 +45,11 @@ namespace O2GOBackEnd.Services
 
             if (contractToUpdate != null)
             {
-                _context.Contracts.FirstOrDefault(c => c.Id == contract.Id).StartDate = contract.StartDate;
-                _context.Contracts.FirstOrDefault(c => c.Id == contract.Id).EndDate = contract.EndDate;
-                _context.Contracts.FirstOrDefault(c => c.Id == contract.Id).Package = contract.Package;
-                _context.Contracts.FirstOrDefault(c => c.Id == contract.Id).Scooter = contract.Scooter;
-                _context.Contracts.FirstOrDefault(c => c.Id == contract.Id).ContractInsurances = contract.ContractInsurances;
+                contractToUpdate.StartDate = contract.StartDate;
+                contractToUpdate.EndDate = contract.EndDate;
+                contractToUpdate.Package = contract.Package;
+                contractToUpdate.Scooter = contract.Scooter;
+                contractToUpdate.ContractInsurances = contract.ContractInsurances;
                 _context.SaveChanges();
 
                 return contract;

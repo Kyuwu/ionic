@@ -38,11 +38,11 @@ namespace O2GOBackEnd.Services
 
             if (scooterToUpdate != null)
             {
-                _context.Scooters.FirstOrDefault(s => scooter.Id == scooter.Id).MaxKmh = scooter.MaxKmh;
-                _context.Scooters.FirstOrDefault(s => scooter.Id == scooter.Id).Brand = scooter.Brand;
-                _context.Scooters.FirstOrDefault(s => scooter.Id == scooter.Id).Year = scooter.Year;
-                _context.Scooters.FirstOrDefault(s => scooter.Id == scooter.Id).Description = scooter.Description;
-                _context.Scooters.FirstOrDefault(s => scooter.Id == scooter.Id).Price = scooter.Price;
+                scooterToUpdate.MaxKmh = scooter.MaxKmh;
+                scooterToUpdate.Brand = scooter.Brand;
+                scooterToUpdate.Year = scooter.Year;
+                scooterToUpdate.Description = scooter.Description;
+                scooterToUpdate.Price = scooter.Price;
                 _context.SaveChanges();
 
                 return scooter;
@@ -72,10 +72,10 @@ namespace O2GOBackEnd.Services
 
             if (scooter != null)
             {
-                _context.Scooters.Find(scooterToUpdate).Services.Add(service);
+                scooterToUpdate.Services.Add(service);
                 _context.SaveChanges();
 
-                return _context.Scooters.Find(scooterToUpdate);
+                return scooterToUpdate;
             }
 
             return null;
@@ -87,10 +87,10 @@ namespace O2GOBackEnd.Services
 
             if (scooter != null)
             {
-                _context.Scooters.Find(scooterToUpdate).Services.Remove(service);
+                scooterToUpdate.Services.Remove(service);
                 _context.SaveChanges();
 
-                return _context.Scooters.Find(scooterToUpdate);
+                return scooterToUpdate;
             }
 
             return null;
@@ -102,10 +102,10 @@ namespace O2GOBackEnd.Services
 
             if (scooter != null)
             {
-                _context.Scooters.Find(scooterToUpdate).Contracts.Add(contract);
+                scooterToUpdate.Contracts.Add(contract);
                 _context.SaveChanges();
 
-                return _context.Scooters.Find(scooterToUpdate);
+                return scooterToUpdate;
             }
 
             return null;
@@ -117,10 +117,10 @@ namespace O2GOBackEnd.Services
 
             if (scooter != null)
             {
-                _context.Scooters.Find(scooterToUpdate).Contracts.Remove(contract);
+                scooterToUpdate.Contracts.Remove(contract);
                 _context.SaveChanges();
 
-                return _context.Scooters.Find(scooterToUpdate);
+                return scooterToUpdate;
             }
 
             return null;

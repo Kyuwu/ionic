@@ -23,9 +23,9 @@ namespace O2GOBackEnd.Services
 
             if (userToUpdate != null)
             {
-                _context.ApplicationUsers.FirstOrDefault(u => u.Id == user.Id).FirstName = user.FirstName;
-                _context.ApplicationUsers.FirstOrDefault(u => u.Id == user.Id).LastName = user.LastName;
-                _context.ApplicationUsers.FirstOrDefault(u => u.Id == user.Id).Address = user.Address;
+                userToUpdate.FirstName = user.FirstName;
+                userToUpdate.LastName = user.LastName;
+                userToUpdate.Address = user.Address;
                 _context.SaveChanges();
 
                 return user;

@@ -36,9 +36,9 @@ namespace O2GOBackEnd.Services
             var insuranceToUpdate = _context.Insurances.FirstOrDefault(i => i.Id == insurance.Id);
             if (insuranceToUpdate != null)
             {
-                _context.Insurances.FirstOrDefault(i => i.Id == insurance.Id).Name = insurance.Name;
-                _context.Insurances.FirstOrDefault(i => i.Id == insurance.Id).Description = insurance.Description;
-                _context.Insurances.FirstOrDefault(i => i.Id == insurance.Id).Price = insurance.Price;
+                insuranceToUpdate.Name = insurance.Name;
+                insuranceToUpdate.Description = insurance.Description;
+                insuranceToUpdate.Price = insurance.Price;
                 _context.SaveChanges();
                 return insurance;
             }

@@ -20,12 +20,12 @@ namespace O2GOBackEnd.Services
         {
             var addressToUpdate = _context.Addresses.FirstOrDefault(a => a.Id == address.Id);
 
-            if(addressToUpdate != null)
+            if (addressToUpdate != null)
             {
-                _context.Addresses.FirstOrDefault(a => a.Id == address.Id).Street = address.Street;
-                _context.Addresses.FirstOrDefault(a => a.Id == address.Id).Number = address.Number;
-                _context.Addresses.FirstOrDefault(a => a.Id == address.Id).City = address.City;
-                _context.Addresses.FirstOrDefault(a => a.Id == address.Id).PostalCode = address.PostalCode;
+                addressToUpdate.Street = address.Street;
+                addressToUpdate.Number = address.Number;
+                addressToUpdate.City = address.City;
+                addressToUpdate.PostalCode = address.PostalCode;
 
                 _context.SaveChanges();
                 return address;

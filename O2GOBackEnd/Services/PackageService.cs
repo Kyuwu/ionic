@@ -37,9 +37,9 @@ namespace O2GOBackEnd.Services
 
             if (packageToUpdate != null)
             {
-                _context.Packages.FirstOrDefault(p => p.Id == package.Id).Name = package.Name;
-                _context.Packages.FirstOrDefault(p => p.Id == package.Id).Description = package.Description;
-                _context.Packages.FirstOrDefault(p => p.Id == package.Id).Price = package.Price;
+                packageToUpdate.Name = package.Name;
+                packageToUpdate.Description = package.Description;
+                packageToUpdate.Price = package.Price;
                 _context.SaveChanges();
 
                 return package;

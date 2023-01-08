@@ -37,8 +37,8 @@ namespace O2GOBackEnd.Services
 
             if (servicepointToUpdate != null)
             {
-                _context.Servicepoints.FirstOrDefault(sp => sp.Id == servicepoint.Id).Name = servicepoint.Name;
-                _context.Servicepoints.FirstOrDefault(sp => sp.Id == servicepoint.Id).Address = servicepoint.Address;
+                servicepointToUpdate.Name = servicepoint.Name;
+                servicepointToUpdate.Address = servicepoint.Address;
                 _context.SaveChanges();
 
                 return servicepoint;

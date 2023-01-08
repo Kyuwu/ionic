@@ -37,10 +37,10 @@ namespace O2GOBackEnd.Services
 
             if (serviceToUpdate != null)
             {
-                _context.Services.FirstOrDefault(s => s.Id == service.Id).Description = service.Description;
-                _context.Services.FirstOrDefault(s => s.Id == service.Id).Servicepoint = service.Servicepoint;
-                _context.Services.FirstOrDefault(s => s.Id == service.Id).Scooter = service.Scooter;
-                _context.Services.FirstOrDefault(s => s.Id == service.Id).Date = service.Date;
+                serviceToUpdate.Description = service.Description;
+                serviceToUpdate.Servicepoint = service.Servicepoint;
+                serviceToUpdate.Scooter = service.Scooter;
+                serviceToUpdate.Date = service.Date;
                 _context.SaveChanges();
 
                 return service;
