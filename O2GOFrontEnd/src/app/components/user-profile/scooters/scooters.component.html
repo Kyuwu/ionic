@@ -2,46 +2,50 @@
 <div class="ion-page" id="main-content">
   <app-menu-header title="Scooters"></app-menu-header>
   <ion-content class="ion-padding">
-    <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'22'">
+    <mat-vertical-stepper id="material-vertical-stepper" [linear]="false" #stepper [animationDuration]="'22'">
       <mat-step [stepControl]="scooterSelection">
         <ng-template matStepLabel>1. Choose your scooter</ng-template>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Brand: {{scooters[index].brand}}</ion-card-title>
-            <ion-card-subtitle>Description: {{scooters[index].description}}</ion-card-subtitle>
-          </ion-card-header>
+        <ion-card id="scooter-header">
           <ion-card-content>
-            Licenseplate: {{scooters[index].licensePlate}}
-            Price: {{scooters[index].price}}
+            Brand: {{scooters[index].brand}}<br>
+            Description: {{scooters[index].description}}<br>
+            Licenseplate: {{scooters[index].licensePlate}}<br>
+            Price: {{scooters[index].price}}<br>
             Build year: {{scooters[index].year}}
           </ion-card-content>
         </ion-card>
         <ion-list>
           <form id="container" class="form-signin" [formGroup]="scooterSelection" (ngSubmit)="submit()">
             <ion-radio-group formControlName="scooter" [allowEmptySelection]="true" value="scooterSelection">
-              <ion-item *ngFor="let scooter of scooters; index as i">
+              <ion-item *ngFor="let scooter of scooters; index as i" id="scooter-details">
                 <ion-thumbnail slot="start">
-                  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                  <img alt="Silhouette of mountains" src="https://cdn-icons-png.flaticon.com/512/1819/1819598.png" />
                 </ion-thumbnail>
                 <ion-label>{{scooter.brand}}</ion-label>
-                <ion-radio (click)="index = i" slot="end" value="{{scooter.licensePlate}}"></ion-radio>
+                <ion-radio (click)="index = i" slot="end" value="{{scooter.licensePlate}}" class="scooter-radio"></ion-radio>
               </ion-item>
             </ion-radio-group>
           </form>
         </ion-list>
-        <button mat-button [disabled]="!scooterSelection.valid" matStepperNext (click)="submit()">Next</button>
+        <button mat-button [disabled]="!scooterSelection.valid" matStepperNext (click)="submit()" class="button-next">Next</button>
       </mat-step>
       <mat-step [stepControl]="contractSelection">
-        <ng-template matStepLabel>2. Choose your contract</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Contract start</mat-label>
-          <mat-date-range-input [formGroup]="contractSelection" [rangePicker]="picker">
-            <input matStartDate formControlName="start" placeholder="Start date">
-            <input matEndDate formControlName="end" placeholder="End date">
-          </mat-date-range-input>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-date-range-picker #picker></mat-date-range-picker>
-        </mat-form-field>
+        <form [formGroup]="contractSelection">
+          <ng-template matStepLabel>2. Choose your contract</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Contract start</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Start date">
+              <input matEndDate formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" id="price-input" readonly>
+          </mat-form-field>
+        </form>
         <button mat-button [disabled]="!contractSelection.valid" matStepperNext (click)="submit()">Next</button>
       </mat-step>
       <mat-step>
@@ -50,6 +54,7 @@
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-button>Finish</button>
         </div>
       </mat-step>
     </mat-vertical-stepper>

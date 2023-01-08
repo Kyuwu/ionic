@@ -1,0 +1,49 @@
+::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: rgba(237,136,33,1) !important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+    background-color: rgba(237,136,33,1) !important;
+}
+
+::ng-deep .mat-vertical-content-container {
+    margin-left: 0 !important;
+}
+
+#scooter-header {
+    margin-inline: 0;
+    margin-bottom: 5px;
+}
+
+#scooter-details {
+    margin: 10px;
+}
+
+.scooter-radio {
+    margin: 0;
+}
+
+.radio-checked {
+    --color-checked: rgba(237,136,33,1) !important;
+}
+
+#material-vertical-stepper {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.button-next {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    display: inline !important;
+}
+
+::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    margin-top: 10px !important;
+}
+
+::ng-deep .mat-date-range-input-wrapper {
+    color: black !important;
+}

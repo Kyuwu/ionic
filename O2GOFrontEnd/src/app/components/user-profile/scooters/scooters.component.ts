@@ -30,6 +30,7 @@ export class ScootersComponent {
   index = 0;
   scooterSelection: FormGroup;
   contractSelection: FormGroup;
+  chosenScooter: Scooter;
 
   constructor(
     public fb: FormBuilder,
@@ -58,6 +59,7 @@ export class ScootersComponent {
   submit() {
     //update to backend with current user
     let scooter = this.scooters.filter(item => item.licensePlate === this.scooterSelection.controls['scooter'].value)[0];
+    this.contractSelection.setControl('price', new FormControl(scooter.price, Validators.required));
     console.log(scooter)
     // this.user.setScooter()
   }

@@ -41,8 +41,7 @@ const routes: Routes = [
   { path: 'user-profile/scooters', component: ScootersComponent, canActivate:[AuthGuard]  },
   { path: 'user-profile/contracts', component: ContractsComponent, canActivate:[AuthGuard]  },
   { path: 'user-profile/services', component: ServicesComponent, canActivate:[AuthGuard]  },
-  { path: 'user-profile/settings', component: SettingsComponent, canActivate:[AuthGuard]  },
-  { path: 'user-profile/edit', component: EditUserComponent, canActivate:[AuthGuard]  },
+  { path: 'user-profile/settings', component: EditUserComponent, canActivate:[AuthGuard]  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
