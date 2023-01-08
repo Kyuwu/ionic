@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "42X/5iP4j/XHLM7pJezkTWS7jw5vjwR6vaBl2fDfAfaCMeT5KCKayqS3FtituusAvAajcqwFQm0NVK3FTEiTiw==",
+  "dgSpecHash": "xXKQd3QGBHXY3dWwksSokoDJn9NWDTCnPUu6PGQ0RrO37Px9guuD5U3kRe3vHEX3wzzF5DRjWRNJoH3rIwBm/g==",
   "success": true,
-  "projectFilePath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
+  "projectFilePath": "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Verkuijlen\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Verkuijlen\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

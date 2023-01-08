@@ -8959,11 +8959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
+      "projectUniqueName": "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
       "projectName": "O2GOBackEnd.Tests",
-      "projectPath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
+      "projectPath": "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd.Tests\\O2GOBackEnd.Tests.csproj",
       "packagesPath": "C:\\Users\\Verkuijlen\\.nuget\\packages\\",
-      "outputPath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd.Tests\\obj\\",
+      "outputPath": "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8985,8 +8985,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj": {
-              "projectPath": "D:\\School\\Specialisatie\\ionic\\O2GOBackEnd\\O2GOBackEnd.csproj"
+            "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd\\O2GOBackEnd.csproj": {
+              "projectPath": "D:\\School\\Specialisatie\\O2GO\\O2GOBackEnd\\O2GOBackEnd.csproj"
             }
           }
         }
