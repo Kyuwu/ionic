@@ -67,9 +67,6 @@ import {
   UserServiceLocal
 } from './shared/local/user.service';
 import {
-  SettingsComponent
-} from './components/user-profile/settings/settings.component';
-import {
   ServicesComponent
 } from './components/user-profile/services/services.component';
 import {
@@ -95,7 +92,6 @@ import { UserService } from './shared/user.service';
     UserProfileComponent,
     ScootersComponent, MenuComponent,
     MenuHeaderComponent,
-    SettingsComponent,
     ServicesComponent,
     ContractsComponent,
     EditUserComponent

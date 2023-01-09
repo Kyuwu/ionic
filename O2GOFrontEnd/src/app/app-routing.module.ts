@@ -6,7 +6,6 @@ import { Signup2Component } from './components/signup/signup2/signup2.component'
 import { ContractsComponent } from './components/user-profile/contracts/contracts.component';
 import { ScootersComponent } from './components/user-profile/scooters/scooters.component';
 import { ServicesComponent } from './components/user-profile/services/services.component';
-import { SettingsComponent } from './components/user-profile/settings/settings.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AuthGuard } from "./shared/auth.guard";

@@ -12,7 +12,8 @@ export class ScooterServiceLocal {
         year: 2020,
         description: 'Betrouwbare scooter.',
         price: 125,
-        contract: null
+        contract: null,
+        service: null
       },
       {
         licensePlate: 'TRB25A',
@@ -21,7 +22,8 @@ export class ScooterServiceLocal {
         year: 2021,
         description: 'Betrouwbare scooter met weinig kilometers.',
         price: 175,
-        contract: null
+        contract: null,
+        service: null
       },
       {
         licensePlate: 'YON39Q',
@@ -30,7 +32,8 @@ export class ScooterServiceLocal {
         year: 2022,
         description: 'Betrouwbare nieuwe scooter. Weinig mee gereden.',
         price: 250,
-        contract: null
+        contract: null,
+        service: null
       },
       {
         licensePlate: 'XNG94D',
@@ -39,7 +42,8 @@ export class ScooterServiceLocal {
         year: 2022,
         description: 'Betrouwbare nieuwe scooter. Veel mee gereden, nooit problemen.',
         price: 215,
-        contract: null
+        contract: null,
+        service: null
       },
     ];
   }

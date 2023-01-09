@@ -46,14 +46,14 @@
             <input matInput formControlName="price" id="price-input" readonly>
           </mat-form-field>
         </form>
-        <button mat-button [disabled]="!contractSelection.valid" matStepperNext (click)="submitContract()">Next</button>
+        <button mat-button [disabled]="!contractSelection.valid && !scooterSelection.valid" matStepperNext (click)="submitContract()">Next</button>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>3. Payment selection</ng-template>
         You are now done.
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="finish()">Finish</button>
+          <button mat-button [disabled]="!contractSelection.valid && !scooterSelection.valid" (click)="finish()">Finish</button>
         </div>
       </mat-step>
     </mat-vertical-stepper>

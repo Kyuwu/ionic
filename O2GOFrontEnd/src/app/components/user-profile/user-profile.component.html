@@ -12,7 +12,7 @@
             <ion-button (click)="contracts()" color="dark">Contracts</ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button (click)="scooters()" color="dark">Scooters</ion-button>
+            <ion-button [disabled]="this.currentUser.scooter" (click)="scooters()" color="dark">Scooters</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>

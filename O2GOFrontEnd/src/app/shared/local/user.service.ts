@@ -2,6 +2,7 @@ import { Contract } from "../models/contract";
 import {
   Scooter
 } from "../models/scooter";
+import { Service } from "../models/service";
 import {
   User,
   UserGet
@@ -24,9 +25,9 @@ export class UserServiceLocal {
     this.user.scooter.contract = contract;
   }
 
-  public setService(scooter: Scooter) {
-    this.user.scooter = scooter;
-    console.log(this.user.scooter.brand)
+  public setService(service: Service) {
+    this.user.scooter.service = service;
+    console.log(this.user.scooter.service)
   }
 
   public get() {

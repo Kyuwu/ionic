@@ -28,15 +28,13 @@ export class ContractsComponent implements OnInit {
       this.endDate = eday + "-" + emonth + "-" + eyear;
       this.startDate = sday + "-" + smonth + "-" + syear;
     }
-
-
   }
   home() {
     this.router.navigate(['/user-profile']);
   }
 
   remove() {
-    this._user.setScooter(null)
+    this._user.setContract(null)
     this.removeScooter.update(this._user.get());
   }
 

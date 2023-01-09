@@ -54,7 +54,6 @@ export class ScootersComponent {
     this.scooters = this.db.get();
   }
   submitScooter() {
-
     let scooter = this.scooters.filter(item => item.licensePlate === this.scooterSelection.controls['scooter'].value)[0];
     this.contractSelection.setControl('price', new FormControl(scooter.price, Validators.required));
     this.user.setScooter(scooter)
@@ -66,5 +65,6 @@ export class ScootersComponent {
   finish() {
     //update to backend with current user
     this.userUpdate.update(this.user.get());
+    this.router.navigate(['/user-profile']);
   }
 }

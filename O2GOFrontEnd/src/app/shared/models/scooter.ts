@@ -1,4 +1,5 @@
 import { Contract } from "./contract";
+import { Service } from "./service";
 
 export class Scooter {
     licensePlate!: string;
@@ -8,4 +9,5 @@ export class Scooter {
     description!: string;
     price!: number;
     contract!: Contract;
+    service!: Service;
   }
